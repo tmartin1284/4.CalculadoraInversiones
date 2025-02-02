@@ -1,7 +1,5 @@
 function App() {
-  return (
-    <h1>React Investment Calculator</h1>
-  )
+  return <h1>Calculadora de Inversiones con React</h1>;
 }
 
-export default App
+export default App;
