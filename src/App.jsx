@@ -1,6 +1,6 @@
 import Header from "./Componentes/Header";
-
-
+import EntradaDatos from "./Componentes/EntradaDatos";
+import { useState } from "react";
 
 function App() {
   const datosIniciales = {
@@ -9,34 +9,22 @@ function App() {
     interes: 5.5,
     duracion: 10,
   };
-    
+
   const actualizarDatos = (dato, valor) => {
     setDatos({
       ...datos,
-      [dato]: +valor
+      [dato]: +valor,
     });
-  }
+  };
 
+  const [datos, setDatos] = useState({ datosIniciales });
 
-const [datos, setDatos] = useState({datosIniciales});
-
-
-
-  return
-  
-  (
-  <>
- 
-  
-  <Header />
-    <EntradaDatos />
-  if (datos.duracion < 1) 
-    console.log("La duración debe ser mayor a 0");
-    else {
-<SalidaResultados inversionInicial={datos.inversionInicial/>
-
-  } </>
-  )
+  return (
+    <>
+      <Header />
+      <EntradaDatos />
+    </>
+  );
 }
 
 export default App;

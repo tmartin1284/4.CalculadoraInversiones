@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import CuadroDatos from "./CuadroDatos";
 
 export default function EntradaDatos({ datos, setDatos }) {
   return (
@@ -29,16 +30,14 @@ export default function EntradaDatos({ datos, setDatos }) {
       />
     </div>
   );
-}    
+}
 
-
-
-EntradaDatos.prototype = {
-     datos: PropTypes.shape{
-           inversionInicial: PropTypes.number,
-           inversionAnual: PropTypes.number,
-           interes: PropTypes.number,
-           duracion: PropTypes.number, 
-  }.isRequired,
-     setDatos: PropTypes.func.isRequired,
+EntradaDatos.propTypes = {
+  datos: PropTypes.shape({
+    inversionInicial: PropTypes.number,
+    inversionAnual: PropTypes.number,
+    interes: PropTypes.number,
+    duracion: PropTypes.number,
+  }).isRequired,
+  setDatos: PropTypes.func.isRequired,
 };

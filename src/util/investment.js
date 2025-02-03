@@ -13,7 +13,7 @@ export function calculateInvestmentResults({
   const annualData = [];
   let investmentValue = initialInvestment;
   let investmentCapital = initialInvestment;
-let totalInterest = 0;
+  let totalInterest = 0;
   for (let i = 0; i < duration; i++) {
     const interestEarnedInYear = investmentValue * (expectedReturn / 100);
     investmentValue += interestEarnedInYear + annualInvestment;
@@ -21,9 +21,9 @@ let totalInterest = 0;
     investmentCapital += annualInvestment;
     annualData.push({
       year: i + 1, // year identifier
-investmentValue: investmentValue,       // investment value at end of year
+      investmentValue: investmentValue, // investment value at end of year
       interest: interestEarnedInYear, // the amount of interest earned in this year
-totalinterest: totalInterest, // the total amount of interest earned
+      totalinterest: totalInterest, // the total amount of interest earned
       investmentCapital: investmentCapital, // investment added in this year
     });
   }
@@ -34,9 +34,9 @@ totalinterest: totalInterest, // the total amount of interest earned
 // The browser-provided Intl API is used to prepare a formatter object
 // This object offers a "format()" method that can be used to format numbers as currency
 // Example Usage: formatter.format(1000) => yields "$1,000"
-export const formatter = new Intl.NumberFormat('es-ES', {
-  style: 'currency',
-  currency: 'eur',
+export const formatter = new Intl.NumberFormat("es-ES", {
+  style: "currency",
+  currency: "eur",
   minimumFractionDigits: 0,
   maximumFractionDigits: 0,
 });

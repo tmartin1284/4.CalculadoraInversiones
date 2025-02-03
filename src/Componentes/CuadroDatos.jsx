@@ -19,7 +19,7 @@ export default function CuadroDatos({
   );
 }
 
-CuadroDatos.prototype = {
+CuadroDatos.propTypes = {
   texto: PropTypes.string.isRequired,
   etiqueta: PropTypes.string.isRequired,
   dato: PropTypes.number.isRequired,
