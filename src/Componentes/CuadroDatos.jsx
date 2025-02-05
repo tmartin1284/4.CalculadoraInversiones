@@ -6,16 +6,16 @@ export default function CuadroDatos({
   onDatoActualizado,
 }) {
   return (
-    <div>
+    <p>
       <label htmlFor={etiqueta}>{texto}</label>
       <input
         type="number"
         required
         id={etiqueta}
-        name={dato}
+        value={dato}
         onChange={(e) => onDatoActualizado(etiqueta, +e.target.value)}
       />
-    </div>
+    </p>
   );
 }
 

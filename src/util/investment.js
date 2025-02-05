@@ -1,24 +1,25 @@
 // This function expects a JS object as an argument
 // The object should contain the following properties
-// - initialInvestment: The initial investment amount
-// - annualInvestment: The amount invested every year
-// - expectedReturn: The expected (annual) rate of return
-// - duration: The investment duration (time frame)
+// - inversionInicial: The initial investment amount
+// - inversionAnual: The amount invested every year
+// - interes: The expected (annual) rate of return
+// - duracion: The investment duracion (time frame)
 export function calculateInvestmentResults({
-  initialInvestment,
-  annualInvestment,
-  expectedReturn,
-  duration,
+  inversionInicial,
+  inversionAnual,
+  interes,
+  duracion,
 }) {
   const annualData = [];
-  let investmentValue = initialInvestment;
-  let investmentCapital = initialInvestment;
+  let investmentValue = inversionInicial;
+  let investmentCapital = inversionInicial;
   let totalInterest = 0;
-  for (let i = 0; i < duration; i++) {
-    const interestEarnedInYear = investmentValue * (expectedReturn / 100);
-    investmentValue += interestEarnedInYear + annualInvestment;
+  //console.log(investmentValue);
+  for (let i = 0; i < duracion; i++) {
+    const interestEarnedInYear = investmentValue * (interes / 100);
+    investmentValue += interestEarnedInYear + inversionAnual;
     totalInterest += interestEarnedInYear;
-    investmentCapital += annualInvestment;
+    investmentCapital += inversionAnual;
     annualData.push({
       year: i + 1, // year identifier
       investmentValue: investmentValue, // investment value at end of year

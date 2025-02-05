@@ -1,6 +1,7 @@
 import Header from "./Componentes/Header";
 import EntradaDatos from "./Componentes/EntradaDatos";
 import { useState } from "react";
+import SalidaResultados from "./Componentes/SalidaResultados";
 
 function App() {
   const datosIniciales = {
@@ -9,6 +10,7 @@ function App() {
     interes: 5.5,
     duracion: 10,
   };
+  const [datos, setDatos] = useState(datosIniciales);
 
   const actualizarDatos = (dato, valor) => {
     setDatos({
@@ -17,12 +19,12 @@ function App() {
     });
   };
 
-  const [datos, setDatos] = useState({ datosIniciales });
-
   return (
     <>
       <Header />
-      <EntradaDatos />
+      <EntradaDatos datos={datos} onCambioDatos={actualizarDatos} />
+
+      {datos.duracion > 0 && <SalidaResultados datos={datos} />}
     </>
   );
 }
